@@ -1,0 +1,25 @@
+---
+# tasks file for docker
+
+  - name: Check docker installation
+    command: docker --version
+    register: docker_check
+    ignore_errors: true
+
+# Если docker установлен, то все последующие задания будут пропущены
+  - name: Get Docker installation script
+    ansible.builtin.get_url:
+      url: https://get.docker.com
+      dest: /root/get-docker.sh
+      mode: '700'
+    when: docker_check.rc !=  0
+
+  - name: Run docker installation script 
+    ansible.builtin.shell: /root/get-docker.sh
+    when: docker_check.rc !=  0
+
+  - name: Remove Docker installation script
+    ansible.builtin.file:
+      path: /root/get-docker.sh
+      state: absent
+    when: docker_check.rc !=  0
