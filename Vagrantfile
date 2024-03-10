@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.hostname = "ad-vulnbox"
   config.vm.synced_folder ".", "/vagrant"
+  config.vm.network "private_network", ip: "192.168.228.100", :adapater=>2
 
   config.vm.provision "ansible_local" do |ansible|
     ansible.install = true
