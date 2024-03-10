@@ -5,7 +5,7 @@ Self Hosted vulnbox solution
 | System  | Arch | Backend       | Status           |
 |---------|------|---------------|------------------|
 | Windows | x86  | vbox          | +                |
-| MacOS   | x86  | vbox          | Не протестировал |
+| MacOS   | x86  | vbox          | +                |
 | MacOs   | ARM  | ???           |                  |
 | Linux   | x86  | Вероятно QEMU |                  |
 

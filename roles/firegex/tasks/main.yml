@@ -19,7 +19,7 @@
       dest: /root/firegex/
     when: not dir_stat.stat.exists
 
-  - name: Запуск скрипта Python
+  - name: Run firegex install script 
     ansible.builtin.command: python3 /root/firegex/start.py --psw-no-interactive {{ universal_pass }}
 
   - name: Readiness message 
