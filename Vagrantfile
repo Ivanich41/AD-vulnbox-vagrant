@@ -1,6 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# x86 Virtualbox
+
 Vagrant.configure("2") do |config|
 
   config.vm.box = "generic/debian12"
