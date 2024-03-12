@@ -4,7 +4,7 @@ Self Hosted vulnbox solution
 ## Prerequisites
 - [Vagrant](https://developer.hashicorp.com/vagrant/install)
 - [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-- x86 OS 
+- [Vmware Fusion](https://www.vmware.com/products/fusion.html) for ARM Mac
 
 ## How to:
 Запуск состоит из двух этапов. Создание виртуальной машины и её настройка с помощью Ansible.
@@ -24,8 +24,8 @@ vagrant provision
 ```bash
 vagrant halt 
 ```
-
-Status                                   |
+## Status
+| OS      | Arch | Provider      | Status                 
 |---------|------|---------------|------------------------------------------|
 | Windows | x86  | vbox          | +                                        |
 | MacOS   | x86  | vbox          | +                                        |
