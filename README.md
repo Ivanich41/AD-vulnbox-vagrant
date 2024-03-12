@@ -25,7 +25,7 @@ vagrant provision
 vagrant halt 
 ```
 
-Status                                   |
+## Status                                   
 |---------|------|---------------|------------------------------------------|
 | Windows | x86  | vbox          | +                                        |
 | MacOS   | x86  | vbox          | +                                        |
