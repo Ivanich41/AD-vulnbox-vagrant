@@ -3,32 +3,8 @@ Self Hosted vulnbox solution
 
 ## Prerequisites
 - [Vagrant](https://developer.hashicorp.com/vagrant/install)
-- [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-- x86 OS 
-
-## How to:
-Запуск состоит из двух этапов. Создание виртуальной машины и её настройка с помощью Ansible.
-
-Для запуска достаточно ввести команду ниже
-```bash
-vagrant up 
-```
-Выполнится создание и настройка vulnbox. В конце настройки отобразится сообщение Ansible.
-
-![done](./static/done.png)
-Отдельно настройку можно выполнить командой 
-```bash
-vagrant provision
-```
-Остановка машины осуществляется командой
-```bash
-vagrant halt 
-```
-
-## Prerequisites
-- [Vagrant](https://developer.hashicorp.com/vagrant/install)
-- [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-- [Vmware Fusion](https://www.vmware.com/products/fusion.html) for ARM Mac
+- [Virtualbox](https://www.virtualbox.org/wiki/Downloads) для x86 Windows/Linux/Mac
+- [Vmware Fusion](https://www.vmware.com/products/fusion.html) для ARM Mac
 
 ## How to:
 Запуск состоит из двух этапов. Создание виртуальной машины и её настройка с помощью Ansible.
