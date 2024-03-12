@@ -1,32 +1,30 @@
 ---
 # tasks file for post-install
 #
-# Для Vagrant версии {{ ansible_host }} заменена на {{ ansible_eth1.ipv4.address }}
-# потому что в первом варианте переменная принимает значение default: 
-# https://github.com/Ivanich41/AD-vulnbox-vagrant/issues/1
-# В данном случае создается дополнительный виртуальный адаптер хоста с интерфейсом eth1 и ip 192.168.228.100 
+# {{ ansible_eth1.ipv4.address }} заменена на {{ ansible_default_ipv4.address }}
 
   - name: All ready message 
     debug:
       msg: 
         - "Packmate"
         - "—————————————————"
-        - "Address: http://{{ ansible_eth1.ipv4.address }}:65000"
+        - "Address: http://{{ ansible_default_ipv4.address }}:65000"
         - "Creds: BinaryBears : {{ universal_pass }}"
-        - "http://BinaryBears:{{ universal_pass }}@{{ ansible_eth1.ipv4.address }}:65000"
+        - "http://BinaryBears:{{ universal_pass }}@{{ ansible_default_ipv4.address }}:65000"
         - ""
         - "Farm"
         - "—————————————————"
-        - " Address: http://{{ ansible_eth1.ipv4.address }}:5137"
+        - " Address: http://{{ ansible_default_ipv4.address }}:5137"
         - " Creds: {{ universal_pass }}"
-        - " http://{{ ansible_eth1.ipv4.address }}:5137/?password={{ universal_pass }}"
+        - " http://{{ ansible_default_ipv4.address }}:5137/?password={{ universal_pass }}"
         - ""
         - "Code-Server"
         - "—————————————————"
-        - "Address: http://{{ ansible_eth1.ipv4.address }}:8080"
+        - "Address: http://{{ ansible_default_ipv4.address }}:8080"
         - "Creds: {{ universal_pass }}"
         - ""
         - "Firegex"
         - "—————————————————"
-        - "Address: http://{{ ansible_eth1.ipv4.address }}:4444"
+        - "Address: http://{{ ansible_default_ipv4.address }}:4444"
         - "Creds: {{ universal_pass }}"
+

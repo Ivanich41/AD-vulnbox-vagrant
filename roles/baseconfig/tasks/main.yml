@@ -15,3 +15,4 @@
     - resolvconf
     - tcpdump
     - pktstat
+    - python3-pip

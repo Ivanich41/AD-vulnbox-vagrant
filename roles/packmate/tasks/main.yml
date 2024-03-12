@@ -20,27 +20,19 @@
   when: not dir_stat.stat.exists
 
 - name: Pull main packmate image
-  community.docker.docker_image:
-    name: registry.gitlab.com/packmate/packmate
-    source: pull
-    pull:
-      platform: amd64
+  ansible.builtin.command: docker pull registry.gitlab.com/packmate/packmate --platform amd64
 
 - name: Pull packmate db
-  community.docker.docker_image:
-    name: postgres:15.2
-    source: pull
-    pull:
-      platform: amd64
+  ansible.builtin.command: docker pull postgres:15.2 --platform amd64
 
-- name: Check pulled images
-  community.docker.docker_image_info:
-    name: "{{ item }}"
-  loop:
-    - registry.gitlab.com/packmate/packmate
-    - postgres:15.2
-  register: docker_images
-  ignore_errors: true
+# - name: Check pulled images
+#   community.docker.docker_image_info:
+#     name: "{{ item }}"
+#   loop:
+#     - registry.gitlab.com/packmate/packmate
+#     - postgres:15.2
+#   register: docker_images
+#   ignore_errors: true
 
 - name: Remove and replace PACKMATE_WEB_LOGIN
   ansible.builtin.lineinfile:
