@@ -1,28 +1,31 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# x86 Virtualbox
+# ARM Vmware 
 
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "generic/debian12"
+    config.vm.box = "spox/ubuntu-arm"
+  
+    config.vm.provider :vmware_desktop do |vmware|
 
-  config.vm.provider "virtualbox" do |vb|
-    vb.name = "ad-vulnbox"
-    vb.memory = "4096"
-    vb.cpus = 4
-#   # Display the VirtualBox GUI when booting the machine
-    # vb.gui = true
-  end
+        vmware.gui = true
+        vmware.cpus = 4
+        vmware.memory = 4096
+        vmware.vmx["ethernet0.virtualdev"] = "vmxnet3"
+        vmware.ssh_info_public = true
+        vmware.linked_clone = false
 
-  config.vm.hostname = "ad-vulnbox"
-  config.vm.synced_folder ".", "/vagrant"
-  config.vm.network "private_network", ip: "192.168.228.100", :adapater=>2
-
-  config.vm.provision "ansible_local" do |ansible|
-    ansible.install = true
-    ansible.verbose = "v"
-    ansible.playbook = "provision.yml"
-  end
-
+    end
+  
+    config.vm.hostname = "ad-vulnbox"
+    config.vm.synced_folder ".", "/vagrant"
+    
+    config.vm.provision "ansible_local" do |ansible|
+      ansible.install = true
+      ansible.verbose = "v"
+      ansible.playbook = "provision.yml"
+    end
+  
 end
+  
