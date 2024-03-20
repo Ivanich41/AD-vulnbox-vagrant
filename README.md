@@ -26,11 +26,12 @@ vagrant halt
 ```
 
 ## Status                                   
-|---------|------|---------------|------------------------------------------|
-| Windows | x86  | vbox          | +                                        |
-| MacOS   | x86  | vbox          | +                                        |
-| MacOS   | ARM  | vmware fusion | +, смотри [инструкцию](./ARM.md)         |
-| Linux   | x86  | vbox          | не тестировано                           |
+| System  | Arch | Backend       | Status                           |
+|---------|------|---------------|----------------------------------|
+| Windows | x86  | vbox          | +                                |
+| MacOS   | x86  | vbox          | +                                |
+| MacOs   | ARM  | vmware fusion | +. смотри [инструкцию](./ARM.md) |
+| Linux   | x86  | vbox          | не тестировано                   |
 
 ## TODO:
 - Протестировать на линуксе со стадартным провайдером 
